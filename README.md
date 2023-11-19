@@ -1,7 +1,7 @@
 
 # Runtime Prediction
 
-Adapted from Kaggle's competition [Google - Fast or Slow? Predict AI Model Runtime](kaggle.com/competitions/predict-ai-model-runtime), this project aims to predict a machine learning models' runtime given its graph representation. The graphs are generated from TensorFlow's XLA compiler. Runtime prediction from `tile:xla` is only implemented in this project.
+Adapted from Kaggle's competition [Google - Fast or Slow? Predict AI Model Runtime](kaggle.com/competitions/predict-ai-model-runtime), this project aims to predict a machine learning models' runtime given its graph representation. The graphs are generated from TensorFlow's XLA compiler. Runtime prediction from `tile:xla` is only implemented in this project. The tile_gnn.ipynb shows the code used for loading data, preprocessing it, building the model, training it, and the evaluation on test data. Different Graph Convolutional Network types from pytorch were used, results of each can be observed in the gcn_tile_xla.txt file.
 
 ## Data Description
 
