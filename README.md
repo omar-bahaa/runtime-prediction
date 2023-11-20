@@ -53,6 +53,30 @@ To deploy the jupyter notebook, install the needed following libraries:
     pip install matplotlib
 ```
 
+## Usage 
+For more convenient usage with our code, we provide details about the key values and functions in our code as follows:
+
+### Code details
+---
+**Values**:
+- The string value `conv_layer` determines which graph learning method will be used to construct the graph layer of the model. **16** different choices (**15** graph neural networks + **1** pure MLP) are constructed for the graph layer, where more details can be found in `Model` class. 
+- The bool value `retrain_mark` controls retraining or direct testing. When it is set `True`, the model will conduct new training process and save the new trained model parameters into `./save_model/`; when it is set `False`, that will be the testing process only with using the trained model in `./save_model/`.
+
+**Functions**:
+- The `Model` class is used for initialization of model instance, where the only initialization parameter is the `conv_layer`.
+- `score_tile_mean` and `score_tile_max` are used to compute the Top-K score for the model, where a 0.1 smoothness factor is used to avoid 0 in denominator. 
+
+### Example usage
+---
+**Train your own model**: If you want to train your own model with, such as, *GCN* graph layer, you should:
+- Set `conv_layer` to be `gcnconv`;
+- Set `retrain_mark` to be `True`.
+
+**Test our trained models**: If you want to use the trained models we provide, for example, *ARMA*, you should:
+- Set `conv_layer` to be `armaconv`;
+- Set `retrain_mark` to be `False`.
+
+
 ## Authors
 
 - Guoming Li
